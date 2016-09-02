@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+ATG-Config-Path: config/
+ATG-Required: DAS DPS DSS DCS B2CCommerce DAS
+ATG-J2EE: j2ee-apps/store
+ATG-EAR-Module: j2ee-apps/store
+ATG-Class-Path: classes
+ATG-Client-Class-Path: lib/commons-httpclient-3.1.jar

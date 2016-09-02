@@ -1,0 +1,105 @@
+<dsp:importbean bean="/atg/userprofiling/Profile"/>
+<dsp:importbean bean="/atg/commerce/order/ShoppingCartModifier"/>
+<dsp:importbean bean="/atg/dynamo/droplet/IsEmpty"/>
+
+Name<br>      
+<dsp:droplet name="IsEmpty">
+  <dsp:param bean="ShoppingCartModifier.paymentGroup.billingAddress.firstName" name="value"/>
+  <dsp:oparam name="false">
+<dsp:input bean="ShoppingCartModifier.paymentGroup.billingAddress.firstName" size="15" type="text"/>
+  </dsp:oparam>
+  <dsp:oparam name="true">
+<dsp:input bean="ShoppingCartModifier.paymentGroup.billingAddress.firstName" beanvalue="Profile.billingAddress.firstName" size="15" type="text"/>
+  </dsp:oparam>
+</dsp:droplet>
+
+<dsp:droplet name="IsEmpty">
+  <dsp:param bean="ShoppingCartModifier.paymentGroup.billingAddress.middleName" name="value"/>
+  <dsp:oparam name="false">
+<dsp:input bean="ShoppingCartModifier.paymentGroup.billingAddress.middleName" size="10" type="text"/>
+  </dsp:oparam>
+  <dsp:oparam name="true">
+<dsp:input bean="ShoppingCartModifier.paymentGroup.billingAddress.middleName" beanvalue="Profile.billingAddress.middleName" size="10" type="text"/>
+  </dsp:oparam>
+</dsp:droplet>
+
+<dsp:droplet name="IsEmpty">
+  <dsp:param bean="ShoppingCartModifier.paymentGroup.billingAddress.lastName" name="value"/>
+  <dsp:oparam name="false">
+<dsp:input bean="ShoppingCartModifier.paymentGroup.billingAddress.lastName" size="15" type="text"/><br>
+  </dsp:oparam>
+  <dsp:oparam name="true">
+<dsp:input bean="ShoppingCartModifier.paymentGroup.billingAddress.lastName" beanvalue="Profile.billingAddress.lastName" size="15" type="text"/><br>
+  </dsp:oparam>
+</dsp:droplet>
+
+Street address <br>
+<dsp:droplet name="IsEmpty">
+  <dsp:param bean="ShoppingCartModifier.paymentGroup.billingAddress.address1" name="value"/>
+  <dsp:oparam name="false">
+<dsp:input bean="ShoppingCartModifier.paymentGroup.billingAddress.address1" size="40" type="text"/><br>
+  </dsp:oparam>
+  <dsp:oparam name="true">
+<dsp:input bean="ShoppingCartModifier.paymentGroup.billingAddress.address1" beanvalue="Profile.billingAddress.address1" size="40" type="text"/><br>
+  </dsp:oparam>
+</dsp:droplet>
+
+<dsp:droplet name="IsEmpty">
+  <dsp:param bean="ShoppingCartModifier.paymentGroup.billingAddress.address2" name="value"/>
+  <dsp:oparam name="false">
+<dsp:input bean="ShoppingCartModifier.paymentGroup.billingAddress.address2" size="40" type="text"/><br>
+  </dsp:oparam>
+  <dsp:oparam name="true">
+<dsp:input bean="ShoppingCartModifier.paymentGroup.billingAddress.address2" beanvalue="Profile.billingAddress.address2" size="40" type="text"/><br>
+  </dsp:oparam>
+</dsp:droplet>
+
+City, State/Province, Postal Code<br>
+<dsp:droplet name="IsEmpty">
+  <dsp:param bean="ShoppingCartModifier.paymentGroup.billingAddress.city" name="value"/>
+  <dsp:oparam name="false">
+  <dsp:input bean="ShoppingCartModifier.paymentGroup.billingAddress.city" size="20" type="text"/>
+  </dsp:oparam>
+  <dsp:oparam name="true">
+  <dsp:input bean="ShoppingCartModifier.paymentGroup.billingAddress.city" beanvalue="Profile.billingAddress.city" size="20" type="text"/>
+  </dsp:oparam>
+</dsp:droplet>
+
+
+
+<dsp:droplet name="IsEmpty">
+  <dsp:param bean="ShoppingCartModifier.paymentGroup.billingAddress.state" name="value"/>
+  <dsp:oparam name="true">
+    <dsp:setvalue bean="ShoppingCartModifier.paymentGroup.billingAddress.state" beanvalue="Profile.billingAddress.state"/>
+  </dsp:oparam>
+</dsp:droplet>
+<dsp:select bean="ShoppingCartModifier.paymentGroup.billingAddress.state">
+  <%@ include file="StatePicker.jspf" %>
+</dsp:select>
+
+
+
+<dsp:droplet name="IsEmpty">
+  <dsp:param bean="ShoppingCartModifier.paymentGroup.billingAddress.postalCode" name="value"/>
+  <dsp:oparam name="false">
+  <dsp:input bean="ShoppingCartModifier.paymentGroup.billingAddress.postalCode" size="10" type="text"/>
+  </dsp:oparam>
+  <dsp:oparam name="true">
+  <dsp:input bean="ShoppingCartModifier.paymentGroup.billingAddress.postalCode" beanvalue="Profile.billingAddress.postalCode" size="10" type="text"/>
+  </dsp:oparam>
+</dsp:droplet>
+
+<br>
+
+Country<br>
+<dsp:droplet name="IsEmpty">
+  <dsp:param bean="ShoppingCartModifier.paymentGroup.billingAddress.country" name="value"/>
+  <dsp:oparam name="true">
+    <dsp:setvalue bean="ShoppingCartModifier.paymentGroup.billingAddress.country" beanvalue="Profile.billingAddress.country"/>
+  </dsp:oparam>
+</dsp:droplet>
+ <dsp:input bean="ShoppingCartModifier.paymentGroup.billingAddress.country" maxlength="10" size="10" type="text" required="<%=true%>"/>
+
+
+<br>
+<%-- @version $Id: //product/DCS/version/9.0/release/PioneerCyclingJSP/j2ee-apps/pioneer/web-app/en/common/enter_billing_address.jspf#1 $$Change: 508164 $--%>

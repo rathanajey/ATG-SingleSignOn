@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="{APP-NAME}" default="build.ear">
+
+<target name="build.war">
+
+ 	<war destfile="C:\ATG\ATG10.0.2\EStore/j2ee-apps/store.war" update="true" webxml="C:\ATG\ATG10.0.2\EStore/j2ee-apps/store/store.war/WEB-INF/web.xml">
+	<fileset dir="C:\ATG\ATG10.0.2\EStore/j2ee-apps/store/store.war">
+		<include name="**/*"/>
+		<exclude name="WEB-INF/web.xml"/>
+	</fileset>
+	</war>
+	<!--<place-holder-for-war-task/>-->
+ </target>
+
+<target name="build.ear" depends="build.war">
+  <ear destfile="C:\ATG\ATG10.0.2\EStore/j2ee-apps/store.ear" appxml="C:\ATG\ATG10.0.2\EStore/j2ee-apps/store/META-INF/application.xml">
+    <metainf dir="C:\ATG\ATG10.0.2\EStore/j2ee-apps/store/META-INF" includes="DYNAMO-INF/**/*"/>
+    <fileset dir="C:\ATG\ATG10.0.2\EStore/j2ee-apps" includes="*.war,*.jar"/>
+  </ear>
+</target>
+</project>
+<!-- @version $Id: //product/Eclipse/main/plugins/atg.project/templates/build.xml#1 $$Change: 425088 $ -->

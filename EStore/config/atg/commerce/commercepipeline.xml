@@ -1,0 +1,12 @@
+<pipelinemanager>
+
+  <pipelinechain name="processOrder" xml-combine="append" headlink="preRemoveItemFromOrder">
+    <pipelinelink name="preRemoveItemFromOrder" transaction="TX_REQUIRED" >
+      <processor jndi="/atg/commerce/SampleJNDI"/>
+      <transition returnvalue="1" link="sample"/>
+    </pipelinelink>
+    	<pipelinelink name="sample" transaction="TX_REQUIRED">
+    	  <processor jndi="/atg/commerce/SampleJNDI2"/>
+    	</pipelinelink>
+  </pipelinechain>
+</pipelinemanager>

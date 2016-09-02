@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE gsa-template
+        PUBLIC "-//Art Technology Group, Inc.//DTD General SQL Adapter//EN"
+        "http://www.atg.com/dtds/gsa/gsa_1.0.dtd">
+
+<gsa-template>
+
+	<header>
+		<name>Order</name>
+		<author>Manny Parasirakis</author>
+		<version>
+			$Id:
+			//product/DCS/version/10.0.2/templates/DCS/config/atg/commerce/order/orderrepository.xml#2
+			$$Change: 635969 $
+		</version>
+	</header>
+
+	<item-descriptor name="user" xml-combine="append" >
+
+<table name="dps_user_aux" id-column-name="id" type="auxiliary">
+    
+      <property name="height" category-resource="categoryBasics" display-name-resource="Height" column-name="height" data-type="String">
+        <attribute name="resourceBundle" value="atg.commerce.UserProfileTemplateResources" /> 
+        <attribute name="propertySortPriority" value="10"/>
+      </property>
+
+	<property name="weight" category-resource="categoryBasics" display-name-resource="Weight" column-name="weight" data-type="String">
+        <attribute name="resourceBundle" value="atg.commerce.UserProfileTemplateResources" /> 
+        <attribute name="propertySortPriority" value="5"/>
+      </property>
+
+	<property name="hobbies" category-resource="categoryBasics" display-name-resource="Hobbies" column-name="hobbies" data-type="String">
+        <attribute name="resourceBundle" value="atg.commerce.UserProfileTemplateResources" /> 
+        <attribute name="propertySortPriority" value="3"/>
+      </property>	
+
+	</table>
+	
+	<table name="dps_userlikes" id-column-name="id" type="auxiliary">
+	<property name="userlikes" category-resource="categoryBasics" display-name-resource="UserLikes" column-name="userlikes" data-type="boolean" default="false">
+
+       
+	<attribute name="resourceBundle" value="atg.commerce.UserProfileTemplateResources" /> 
+        <attribute name="propertySortPriority" value="5"/>
+      </property>
+      
+</table>
+
+	</item-descriptor>
+</gsa-template>
+
+
+

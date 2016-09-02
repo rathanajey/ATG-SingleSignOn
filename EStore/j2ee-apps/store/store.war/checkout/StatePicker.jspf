@@ -1,0 +1,19 @@
+
+<%-- 
+This page fragment generates a series of dsp:option tags, one for each
+state or Candian province we want to let the user select as part of an
+address. 
+--%>
+
+    <% atg.servlet.DynamoHttpServletRequest dynamoRequest =
+      atg.servlet.ServletUtil.getDynamoRequest(request); 
+    %>
+
+<%-- Generate an empty option tag for no selection --%>
+<dsp:option value=""/>
+
+<%-- Iterate over the list of known destinations and generate an option tag for each --%>
+<dsp:option value='AL'>Alabama</dsp:option>   
+                    <dsp:option value='FL'>Florida</dsp:option>   
+                    <dsp:option value='GA'>Georgia</dsp:option>   
+                    <dsp:option value='HI'>Hawaii</dsp:option> 

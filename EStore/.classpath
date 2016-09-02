@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/CommerceReferenceStore/Store/EStore/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/CommerceReferenceStore/Store/EStore/lib/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/SPARKRED/PayPal/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/DCS/lib/resources.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/DCS/lib/classes.jar" sourcepath="C:/Documents and Settings/training/Desktop"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/WebUI/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/DSS/lib/resources.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/DSS/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/DPS/lib/resources.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/DPS/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/DAS-UI/lib/uiresources.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/DAS-UI/lib/uiclasses.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/DAS-UI/lib/jhall.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/DAS/lib/resources.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/DAS/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/DAS/lib/servlet.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/DAS/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/DAS/lib/ice.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/DAS/solid/SolidDriver2.1.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/DAS/lib/cglib-nodep-2.1_3.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.0.2/DAS/lib/spring-aop-1.2-rc1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>

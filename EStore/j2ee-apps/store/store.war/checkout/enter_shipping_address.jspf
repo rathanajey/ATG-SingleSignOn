@@ -1,0 +1,112 @@
+<dsp:importbean bean="/atg/userprofiling/Profile"/>
+<dsp:importbean bean="/atg/commerce/order/ShoppingCartModifier"/>
+<dsp:importbean bean="/atg/dynamo/droplet/IsEmpty"/>
+
+Name<br>      
+
+<!-- Store the ProfileID in ownerId field of the new address.
+     This tells us this address "belongs to" (and can be 
+     edited) by the user. -->
+<dsp:input bean="ShoppingCartModifier.shippingGroup.shippingAddress.ownerId" beanvalue="Profile.id" type="hidden"/>
+
+<dsp:getvalueof id="firstName" bean="ShoppingCartModifier.shippingGroup.shippingAddress.firstName">
+  
+<% if((firstName== null) || (firstName.equals(""))) { %>
+  <dsp:input bean="ShoppingCartModifier.shippingGroup.shippingAddress.firstName" beanvalue="Profile.shippingAddress.firstName" size="15" type="text"/>
+<%} else {%> 
+  <dsp:input bean="ShoppingCartModifier.shippingGroup.shippingAddress.firstName" size="15" type="text"/>
+<%}%> 
+
+</dsp:getvalueof>
+
+<dsp:getvalueof id="middleName" bean="ShoppingCartModifier.shippingGroup.shippingAddress.middleName">
+  
+<% if((middleName== null) || (middleName.equals(""))) { %>
+  <dsp:input bean="ShoppingCartModifier.shippingGroup.shippingAddress.middleName" beanvalue="Profile.shippingAddress.middleName" size="10" type="text"/>
+<%} else {%> 
+  <dsp:input bean="ShoppingCartModifier.shippingGroup.shippingAddress.middleName" size="10" type="text"/>
+<%}%> 
+
+</dsp:getvalueof>
+
+
+<dsp:getvalueof id="lastName" bean="ShoppingCartModifier.shippingGroup.shippingAddress.lastName">
+  
+<% if((lastName== null) || (lastName.equals(""))) { %>
+  <dsp:input bean="ShoppingCartModifier.shippingGroup.shippingAddress.lastName" beanvalue="Profile.shippingAddress.lastName" size="15" type="text"/><br>
+<%} else {%> 
+  <dsp:input bean="ShoppingCartModifier.shippingGroup.shippingAddress.lastName" size="15" type="text"/><br>
+<%}%> 
+
+</dsp:getvalueof>
+
+
+
+Street address <br>
+<dsp:getvalueof id="address1" bean="ShoppingCartModifier.shippingGroup.shippingAddress.address1">
+  
+<% if((address1== null) || (address1.equals(""))) { %>
+<dsp:input bean="ShoppingCartModifier.shippingGroup.shippingAddress.address1" beanvalue="Profile.shippingAddress.address1" size="40" type="text"/><br>
+<%} else {%> 
+<dsp:input bean="ShoppingCartModifier.shippingGroup.shippingAddress.address1" size="40" type="text"/><br>
+<%}%> 
+
+</dsp:getvalueof>
+
+<dsp:getvalueof id="address2" bean="ShoppingCartModifier.shippingGroup.shippingAddress.address2">
+  
+<% if((address2== null) || (address2.equals(""))) { %>
+  <dsp:input bean="ShoppingCartModifier.shippingGroup.shippingAddress.address2" beanvalue="Profile.shippingAddress.address2" size="40" type="text"/><br>
+<%} else {%> 
+  <dsp:input bean="ShoppingCartModifier.shippingGroup.shippingAddress.address2" size="40" type="text"/><br>
+<%}%> 
+
+</dsp:getvalueof>
+
+City, State/Province, Postal Code<br>
+
+<dsp:getvalueof id="city" bean="ShoppingCartModifier.shippingGroup.shippingAddress.city">
+  
+<% if((city== null) || (city.equals(""))) { %>
+  <dsp:input bean="ShoppingCartModifier.shippingGroup.shippingAddress.city" beanvalue="Profile.shippingAddress.city" size="20" type="text"/>
+<%} else {%> 
+  <dsp:input bean="ShoppingCartModifier.shippingGroup.shippingAddress.city" size="20" type="text"/>
+<%}%> 
+
+</dsp:getvalueof>
+
+<dsp:getvalueof id="state" bean="ShoppingCartModifier.shippingGroup.shippingAddress.state">
+  
+<% if((state== null) || (state.equals(""))) { %>
+  <dsp:setvalue bean="ShoppingCartModifier.shippingGroup.shippingAddress.state" beanvalue="Profile.shippingAddress.state"/>
+<%}%> 
+
+</dsp:getvalueof>
+
+<dsp:select bean="ShoppingCartModifier.shippingGroup.shippingAddress.state">
+  <%@ include file="StatePicker.jspf" %>
+</dsp:select>
+
+<dsp:getvalueof id="code" bean="ShoppingCartModifier.shippingGroup.shippingAddress.postalCode">
+  
+<% if((code== null) || (code.equals(""))) { %>
+  <dsp:input bean="ShoppingCartModifier.shippingGroup.shippingAddress.postalCode" beanvalue="Profile.shippingAddress.postalCode" size="10" type="text"/><br>
+<%} else {%> 
+  <dsp:input bean="ShoppingCartModifier.shippingGroup.shippingAddress.postalCode" size="10" type="text"/><br>
+<%}%> 
+
+</dsp:getvalueof>
+
+Country<br>
+<dsp:getvalueof id="country" bean="ShoppingCartModifier.shippingGroup.shippingAddress.country">
+  
+<% if((country== null) || (country.equals(""))) { %>
+    <dsp:setvalue bean="ShoppingCartModifier.shippingGroup.shippingAddress.country" beanvalue="Profile.shippingAddress.country"/>
+<%}%> 
+
+</dsp:getvalueof>
+<dsp:input bean="ShoppingCartModifier.shippingGroup.shippingAddress.country" maxlength="10" size="10" type="text" required="<%=true%>"/>
+
+
+<br>
+<%-- @version $Id: //product/DCS/version/9.0/release/PioneerCyclingJSP/j2ee-apps/pioneer/web-app/en/common/enter_shipping_address.jspf#1 $$Change: 508164 $--%>
